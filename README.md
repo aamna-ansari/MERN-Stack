@@ -15,9 +15,13 @@ Node JS is runtime Environment for JavaScript.
 node -v
 npm -v 
 ```
-📌 NPM mean Noe package Manger 
+📌 NPM mean Node package Manager 
 
-## Helo World:
+## Helo World
 - window
 - npm package
 - create script | start 
+
+## Modules
+- require |  import 
+- export 
