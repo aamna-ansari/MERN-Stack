@@ -24,4 +24,5 @@ npm -v
 
 ## Modules
 - require |  import 
-- export 
+- exports 
+- module.exports
