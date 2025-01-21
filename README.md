@@ -50,6 +50,8 @@ console.log(os.cpus().length);
 ```
 ## Building HTTP Server
 
+ <!-- in server Folder perform this task -->
+
 - Creating an HTTP web server using NodeJS
 - Creating HTTP server using NodeJS.
 - Handling requests and sending responses in NodeJS

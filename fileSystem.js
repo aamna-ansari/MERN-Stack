@@ -1,8 +1,8 @@
 
 const fs = require('fs');
 
-const os = require('os');
-console.log(os.cpus().length);
+// const os = require('os');
+// console.log(os.cpus().length);
 
 // 📍 Create a File with Syn , Blocking request
 
@@ -44,6 +44,11 @@ console.log(os.cpus().length);
 // 📍 create folder
 
 // fs.mkdirSync('./helo');
+
+// create a folder for server create by using module
+
+fs.mkdirSync('./server');
+
 
 
 

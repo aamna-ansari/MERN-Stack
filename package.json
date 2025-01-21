@@ -5,7 +5,7 @@
   "main": "heloworld.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-  "start": "node heloworld.js"
+  "helo": "node heloworld.js"
   },
   "author": "AaMna AnSari",
   "license": "ISC"
