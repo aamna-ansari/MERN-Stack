@@ -30,8 +30,19 @@ npm -v
 ## File System
 - Create File (writeFileSyn | writeFile)
 - Read File  (readFileSyn | readFile)
-- SAve previous  data with out over write (append)
+- Save previous data with out over write (append)
 - copy File
 - Delete File (unlinksync)
 - Create Folder
+
+## Architecture | How NodeJS Works?
+![](./images/Node.js-Architecture-Chart.png)
+![](./images/nodejs.webp)
+- Default Thread pool size is 4
+  - Max? = 8core cp = 8
+
+```
+const os = require('os');
+console.log(os.cpus().length);
+```
 

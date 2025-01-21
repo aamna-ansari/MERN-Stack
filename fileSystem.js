@@ -1,12 +1,15 @@
 
 const fs = require('fs');
 
-// 📍 Create a File with Syn 
+const os = require('os');
+console.log(os.cpus().length);
+
+// 📍 Create a File with Syn , Blocking request
 
 // fs.writeFileSync('./test.txt', 'Helo, i created by using writeFileSync');
 
 
-// 📍Create file  with Async | it take call back function 
+// 📍Create file  with Async | it take call back function  | non - Blocking request
 
 // fs.writeFile('./test.txt', 'Helo i created b using Asyn' , (err)=>{})
 
@@ -41,4 +44,8 @@ const fs = require('fs');
 // 📍 create folder
 
 // fs.mkdirSync('./helo');
+
+
+
+
 
