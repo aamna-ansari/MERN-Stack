@@ -26,3 +26,12 @@ npm -v
 - require |  import 
 - exports 
 - module.exports
+
+## File System
+- Create File (writeFileSyn | writeFile)
+- Read File  (readFileSyn | readFile)
+- SAve previous  data with out over write (append)
+- copy File
+- Delete File (unlinksync)
+- Create Folder
+
