@@ -61,3 +61,15 @@ console.log(os.cpus().length);
 - Creating a log for web server requests
 - Creating multiple pages using switch case on request URL.
 - Always support non-blocking requests for better performance
+
+```js
+const myServer = http.createServer((req, res) => {  
+    res.end('Hello, Node.js Server!')
+});
+
+// run on port
+myServer.listen(8000, () => {
+    console.log('Server running at http://localhost:8000/');   
+});
+
+```
