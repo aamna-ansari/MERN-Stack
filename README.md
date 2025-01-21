@@ -73,3 +73,5 @@ myServer.listen(8000, () => {
 });
 
 ```
+## Handling URL's in NodeJS
+![](./images/url.webp)
