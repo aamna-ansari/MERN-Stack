@@ -75,3 +75,21 @@ myServer.listen(8000, () => {
 ```
 ## Handling URL's in NodeJS
 ![](./images/url.webp)
+
+## HTTP Methods
+
+- **GET** 
+    - Purpose: Retrieve data from the server without modifying it.
+    - Use Case: Fetching a webpage or retrieving data from an API.
+- **POST**
+  - Purpose: Send data to the server to create or update a resource.
+  - Use Case: Submitting a form or uploading a file.
+- **PUT**
+  - Purpose: Update or create a resource at a specified URL.
+  - Use Case: Replacing the data of an existing resource or creating a new resource.
+- **PATCH**
+  - Purpose: Partially update a resource.
+  - Use Case: Updating a specific field of a resource.
+- **DELETE**
+  - Purpose: Remove a resource from the server.
+  - Use Case: Deleting a user or post.

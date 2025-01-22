@@ -5,8 +5,11 @@
   "main": "heloworld.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-  "helo": "node heloworld.js"
+    "helo": "node heloworld.js"
   },
   "author": "AaMna AnSari",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "url": "^0.11.4"
+  }
 }

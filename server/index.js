@@ -1,27 +1,41 @@
-// Step 1: Import the required built-in modules
 const http = require("http");
-const fs = require("fs");
 
-// Step 2: Create the server
-const myServer = http.createServer((req, res) => {
-    // Format the current date and time
-    const formattedDate = new Date().toLocaleString();
+// Create a sever
 
-    // Log format including request URL and method
-    const log = `${formattedDate} - Request: [${req.method}] ${req.url}\n`;
+const server1 = http.createServer((req, res) => {
+  switch (req.url) {
+    case "/":
+      if (req.method === "GET") {
+        res.end(`This is Home Page and My request Method is ${req.method}`);
+      }
+      break;
 
-    // Append the log to the log file
-    fs.appendFile('./log.txt', log, (err) => {
-        if (err) {
-            console.error("Error writing to log file:", err);
-        }
-        // Respond with a success message
-        res.end("Hello, Node.js Server!");
-    });
+    case "/about":
+      if (req.method === "GET") {
+        res.write("<h1>About Page</h1>");
+        res.write("<p>This is the about route.</p>");
+        res.end();
+      }
+      break;
+
+    case "/contact":
+      if (req.method === "GET") {
+        res.write("<h1>Contact Page</h1>");
+        res.write("<p>Contact us at contact@example.com</p>");
+        res.end();
+      }
+      break;
+
+    default:
+      res.statusCode = 404;
+      res.write("<h1>404 - Page Not Found</h1>");
+      res.end();
+      break;
+  }
 });
 
-// Step 3: Start the server and listen on port 8000
+// Sever run
 const PORT = 8000;
-myServer.listen(PORT, () => {
-    console.log(`Server running at http://localhost:${PORT}/`);
+server1.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
 });
