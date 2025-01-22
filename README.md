@@ -93,3 +93,33 @@ myServer.listen(8000, () => {
 - **DELETE**
   - Purpose: Remove a resource from the server.
   - Use Case: Deleting a user or post.
+
+
+# Express JS
+
+Express.js is a minimalist web application framework for Node.js. It is designed to simplify the process of building robust and scalable server-side applications. It allows developers to create web applications, RESTful APIs, and more, efficiently and with less boilerplate code.
+
+### How to Install Express.js?
+- Install Node.js from Node.js official site.
+- Use npm to install Express in your project:
+```bash
+  npm install express
+```
+
+## Basic Example
+
+```js
+const express = require('express');
+const app = express();
+
+// Define a route
+app.get('/', (req, res) => {
+  res.send('Welcome to Express.js!');
+});
+
+// Start the server
+const PORT = 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on http://localhost:${PORT}`);
+});
+```
