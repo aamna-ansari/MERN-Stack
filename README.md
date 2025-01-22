@@ -129,3 +129,6 @@ app.listen(PORT, () => {
 
 
 ## What is REST API?
+
+In simple words, a **REST API** is a way for different applications to talk to each other over the internet. It uses standard rules (like HTTP) so that a client (like a website or app) can ask a server for information or send it data.
+
