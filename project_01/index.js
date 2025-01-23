@@ -84,7 +84,24 @@ app
     const user = users.find((user) => user.id === id);
     return res.json(user);
   })
-  .delete((req, res) => {});
+  .delete((req, res) => {
+    const id = Number(req.params.id); // Extract the ID from the route parameter
+    const userIndex = users.findIndex((user) => user.id === id); // Find the index of the user
+
+    if (userIndex !== -1) {
+      const deletedUser = users.splice(userIndex, 1);
+      fs.writeFile('./MOCK_DATA.json', JSON.stringify(users, null, 2), (err) => {
+        return res.status(500).json({ message: "Error writing file", error: err });
+      })
+       // Remove the user from the array
+      return res.json({
+        message: "User deleted successfully",
+        user: deletedUser[0], // Return the deleted user
+      });
+    } else {
+      return res.status(404).json({ message: "User not found" }); // Handle user not found
+    }
+  });
 
 app.listen(PORT, () => {
   console.log(`Server Run Successfully!  `);
