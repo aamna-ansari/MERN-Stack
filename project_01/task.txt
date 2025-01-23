@@ -1,0 +1,15 @@
+Task REST API
+
+1. REST API = JSON
+2. GET Users  | all user list
+3. GET Users/1 | specific user by id  // Dynamic routes
+  -  
+
+4.GET Users  
+5. PATCH
+6. DELETE
+
+Fake Data generator from https://www.mockaroo.com/
+
+
+
