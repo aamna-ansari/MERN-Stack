@@ -5,7 +5,7 @@ Task REST API
 3. GET Users/1 | specific user by id  // Dynamic routes
   -  
 
-4.GET Users  
+4.POST Users   | Create a new users
 5. PATCH
 6. DELETE
 

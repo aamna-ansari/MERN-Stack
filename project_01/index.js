@@ -1,5 +1,6 @@
 const express = require("express");
 const users = require("./MOCK_DATA.json");
+const fs = require('fs')
 
 const app = express();
 
@@ -63,6 +64,10 @@ app.get("/api/users/:id", (req, res) => {
   return res.json(user);
 });
 
+// POST for create 
+app.post("/api/users", (req, res) => {
+  return res.json({Status: 'pending'});
+});
 
 
 app.listen(PORT, () => {
