@@ -132,3 +132,6 @@ app.listen(PORT, () => {
 
 In simple words, a **REST API** is a way for different applications to talk to each other over the internet. It uses standard rules (like HTTP) so that a client (like a website or app) can ask a server for information or send it data.
 
+## Postman
+Postman is a popular API testing tool that allows developers to build, test, and manage APIs. It provides a user-friendly interface for sending HTTP requests and analyzing responses, making it a valuable tool for working with RESTful, GraphQL, and other web APIs.
+
