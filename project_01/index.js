@@ -1,13 +1,13 @@
 const express = require("express");
 const users = require("./MOCK_DATA.json");
-const fs = require ('fs');
+const fs = require("fs");
 const app = express();
 
 const PORT = 8000;
 
 // Middle Ware | like a Plugin
 
-app.use(express.urlencoded({extended: false})) // Bodyy data added 
+app.use(express.urlencoded({ extended: false })); // Bodyy data added
 
 // Routes
 // Routes for API
@@ -61,22 +61,30 @@ app.get("/users", (req, res) => {
 
 // Dynamic routes
 
-app.get("/api/users/:id", (req, res) => {
-  const id = Number(req.params.id);
-  const user = users.find((user) => user.id === id )
-  return res.json(user);
-});
+// app.get("/api/users/:id", (req, res) => {
+//   const id = Number(req.params.id);
+//   const user = users.find((user) => user.id === id )
+//   return res.json(user);
+// });
 
-// POST for create 
+// POST for create
 app.post("/api/users", (req, res) => {
   const body = req.body;
-  users.push({...body, id:users.length + 1});
-  fs.writeFile('./MOCK_DATA.json', JSON.stringify(users) , (err, data)=>{
-
-    return res.json({Status: 'pending'});
-  })
+  users.push({ ...body, id: users.length + 1 });
+  fs.writeFile("./MOCK_DATA.json", JSON.stringify(users), (err, data) => {
+    return res.json({ Status: "pending" });
+  });
 });
 
+// Grouping Of Same Routes
+app
+  .route("/api/users/:id")
+  .get((req, res) => {
+    const id = Number(req.params.id);
+    const user = users.find((user) => user.id === id);
+    return res.json(user);
+  })
+  .delete((req, res) => {});
 
 app.listen(PORT, () => {
   console.log(`Server Run Successfully!  `);
