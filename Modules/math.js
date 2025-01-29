@@ -16,7 +16,7 @@ module.exports = {
     sub
 };
 
-// second usinng export 
+// second using export 
 
 exports.multi = (a, b) =>  a*b;
 exports.divid = (a, b) =>  a/b;
