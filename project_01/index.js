@@ -7,7 +7,7 @@ const PORT = 8000;
 
 // Middle Ware | like a Plugin
 
-app.use(express.urlencoded({ extended: false })); // Bodyy data added
+app.use(express.urlencoded({ extended: false })); // Body data added
 
 // Routes
 // Routes for API
@@ -67,7 +67,7 @@ app.get("/users", (req, res) => {
 //   return res.json(user);
 // });
 
-// POST for create
+// POST for create new user
 app.post("/api/users", (req, res) => {
   const body = req.body;
   users.push({ ...body, id: users.length + 1 });
