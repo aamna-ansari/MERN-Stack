@@ -6,7 +6,7 @@ const express = require ('express');
 
 const app = express();
 //  ---------------- create routes ------------------------ //
-//  app.method(path, callback handeler)
+//  app.method(path, callback handler)
 
 app.get('/', (req, res)=>{
     res.send(`<h1>Hello, I'm the Home Page from ${req.method}</h1>`)
