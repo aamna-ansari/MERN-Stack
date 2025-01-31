@@ -1,5 +1,4 @@
 const express = require("express");
-const users = require("./MOCK_DATA.json");
 const mongoose = require("mongoose");
 const app = express();
 const PORT = 8000;
@@ -35,7 +34,9 @@ const userSchema = new mongoose.Schema({
   gender: {
     type: String,
   },
-});
+},
+{timestamps:true});
+
 
 // Model | Always start with Capital letter
 
@@ -45,9 +46,15 @@ const User = mongoose.model("user", userSchema);
 app.use(express.urlencoded({ extended: false }));
 
 // Create routes
-app.get("/users", (req, res) => {
-  res.send(`<h1>Hi, I am here from Get Method</h1>`);
-});
+app.get("/users", async (req, res) => {
+    const allDbUSers = await User.find({});
+    const html = `
+    <ul>
+    ${allDbUSers.map((user) => `<li>${user.firstName}</li>`).join("")}
+    </ul>
+    `;
+    res.send(html);
+  });
 
 // POST | Create new User
 
@@ -55,19 +62,19 @@ app.post('/api/users', async (req,res)=>{
     const body = req.body;
     if (
         !body || 
-        !body.firstName ||
-        !body.lastName ||
+        !body.first_name ||
+        !body.last_name ||
         !body.email ||
-        !body.jobTitle ||
+        !body.job_title ||
         !body.gender
     ){
         return res.status(400).json({msg: 'All field are required....'});
     }
     const result = await User.create({
-        firstName: body.firstName,
-        lastName: body.lastName,
+        firstName: body.first_name,
+        lastName: body.last_name,
         email: body.email,
-        jobTitle: body.jobTitle,
+        jobTitle: body.job_title,
         gender: body.gender
     });
 
