@@ -135,3 +135,20 @@ In simple words, a **REST API** is a way for different applications to talk to e
 ## Postman
 Postman is a popular API testing tool that allows developers to build, test, and manage APIs. It provides a user-friendly interface for sending HTTP requests and analyzing responses, making it a valuable tool for working with RESTful, GraphQL, and other web APIs.
 
+## MongoDB
+- install MongoDB
+- install MongoDB Shell
+
+```js
+1. mongod --version
+2. mongosh
+```
+
+### Interact with mongoDB
+```bash
+show dbs
+use <db_name>
+show collections
+db.coll.find()
+db.coll.insert()
+```
