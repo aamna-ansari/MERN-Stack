@@ -97,6 +97,14 @@ app.route('/api/users/:id')
     if (!user) return res.status(404).json({error: 'User not Found' })
     return res.json(user);
   })
+  .patch(async (req, res) => {
+    await User.findByIdAndUpdate(req.params.id , {lastName: 'changed'});
+    return res.json({Status: "success"});
+  })
+  .delete(async (req, res) => {
+    await User.findByIdAndDelete(req.params.id);
+    return res.json({Status: "success"});
+  })
 
 
 // Run Server
