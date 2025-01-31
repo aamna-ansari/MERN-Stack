@@ -1,11 +1,12 @@
 const express = require('express');
+const users = require("./MOCK_DATA.json")
 const app = express();
 const PORT = 8000;
 
 // Create routes
 
-app.get('/', (req,res)=>{
-    res.send(console.log("Hi, I am here fromm Get Method"))
+app.get('/users', (req,res)=>{
+    res.send(`<h1>Hi, I am here from Get Method</h1>`)
 })
 
 
