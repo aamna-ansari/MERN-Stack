@@ -50,11 +50,18 @@ app.get("/users", async (req, res) => {
     const allDbUSers = await User.find({});
     const html = `
     <ul>
-    ${allDbUSers.map((user) => `<li>${user.firstName}</li>`).join("")}
+    ${allDbUSers.map((user) => `<li>${user.firstName} - ${user.email}</li>`).join("")}
     </ul>
     `;
     res.send(html);
   });
+
+//   GET api Users
+
+app.get("/api/users", async(req,res)=>{
+    const allDbUSers = await User.find({});
+    return res.json(allDbUSers);
+})
 
 // POST | Create new User
 
@@ -81,6 +88,15 @@ app.post('/api/users', async (req,res)=>{
     console.log("result",result)
     return res.status(201).json({msg: 'success'});
 });
+
+// get by ID
+
+app.route('/api/users/:id')
+.get(async (req, res) => {
+    const user = await User.findById(req.params.id);
+    if (!user) return res.status(404).json({error: 'User not Found' })
+    return res.json(user);
+  })
 
 
 // Run Server
