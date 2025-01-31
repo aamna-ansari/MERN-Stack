@@ -39,7 +39,7 @@ const userSchema = new mongoose.Schema({
 
 // Model | Always start with Capital letter
 
-const USer = mongoose.model("user", userSchema);
+const User = mongoose.model("user", userSchema);
 
 // Middleware
 app.use(express.urlencoded({ extended: false }));
@@ -48,6 +48,33 @@ app.use(express.urlencoded({ extended: false }));
 app.get("/users", (req, res) => {
   res.send(`<h1>Hi, I am here from Get Method</h1>`);
 });
+
+// POST | Create new User
+
+app.post('/api/users', async (req,res)=>{
+    const body = req.body;
+    if (
+        !body || 
+        !body.firstName ||
+        !body.lastName ||
+        !body.email ||
+        !body.jobTitle ||
+        !body.gender
+    ){
+        return res.status(400).json({msg: 'All field are required....'});
+    }
+    const result = await User.create({
+        firstName: body.firstName,
+        lastName: body.lastName,
+        email: body.email,
+        jobTitle: body.jobTitle,
+        gender: body.gender
+    });
+
+    console.log("result",result)
+    return res.status(201).json({msg: 'success'});
+});
+
 
 // Run Server
 app.listen(PORT, () => {
