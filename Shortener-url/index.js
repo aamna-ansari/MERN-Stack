@@ -1,10 +1,16 @@
 //  
 const express = require('express');
+// MongoDB 
+const {connectToMongoDB} = require("./connect")
 // Import Routes here
 const urlRoute = require('./routes/url')
 
-// Create app
 
+// Conect mongb by function
+connectToMongoDB('mongodb://localhost:27017/short-url')
+.then(()=> console.log('MongoDB Connected') )
+
+// Create app
 const app = express();
 
 // Port
