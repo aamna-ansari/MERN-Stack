@@ -5,7 +5,7 @@ const express = require('express');
 const {generatedNewShortUrl} = require('../controllers/url');
 
 // Step2:Router
-const router = express.Router;
+const router = express.Router();
 
 
 //Step3: Create main route POST for generte random-id
