@@ -10,11 +10,14 @@ const urlRoute = require('./routes/url')
 connectToMongoDB('mongodb://localhost:27017/short-url')
 .then(()=> console.log('MongoDB Connected') )
 
+
 // Create app
 const app = express();
 
 // Port
 const PORT = 8000;
+// Use middleware
+app.use(express.json())
 
 // Routes use
 app.use('/url', urlRoute);
