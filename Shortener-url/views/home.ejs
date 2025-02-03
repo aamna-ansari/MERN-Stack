@@ -7,5 +7,8 @@
 </head>
 <body>
     <h1>Helo , I'm Here From EJS Home File</h1>
+    <% urls.forEach(url => { %>
+     <li><%= url.shortId %></li>
+    <% }) %>
 </body>
 </html>
