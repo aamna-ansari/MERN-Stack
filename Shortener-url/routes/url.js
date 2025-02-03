@@ -10,7 +10,7 @@ const router = express.Router;
 
 //Step3: Create main route POST for generte random-id
 
-router.post('/', generatedNewShortUrl );
+router.post('/', generatedNewShortUrl);
 
 // export 
 module.exports = router;
