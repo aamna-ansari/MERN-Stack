@@ -10,8 +10,11 @@ const router = express.Router();
 
 //Step3: Create main route POST for generte random-id
 
+// ✅ Route for creating short URLs
 router.post('/', generatedNewShortUrl);
-// router.get('/:shortId', generatedNewShortUrlById);
+
+// ✅ Route for handling short URL redirects
+router.get('/:shortId', generatedNewShortUrlById);
 
 // export 
 module.exports = router;

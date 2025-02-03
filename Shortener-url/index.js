@@ -23,7 +23,10 @@ app.use(express.json())
 // Routes use
 app.use('/url', urlRoute);
 
-app.get('/:shortId', generatedNewShortUrlById);
+// app.get('/:shortId', generatedNewShortUrlById);
+
+// ✅ Use '/' for short URL redirections
+app.use('/', urlRoute);
 
 
 
