@@ -2,7 +2,7 @@
 const express = require('express');
 
 // step4: Controller Function  destructure
-const {generatedNewShortUrl} = require('../controllers/url');
+const {generatedNewShortUrl, generatedNewShortUrlById} = require('../controllers/url');
 
 // Step2:Router
 const router = express.Router();
@@ -11,6 +11,7 @@ const router = express.Router();
 //Step3: Create main route POST for generte random-id
 
 router.post('/', generatedNewShortUrl);
+// router.get('/:shortId', generatedNewShortUrlById);
 
 // export 
 module.exports = router;

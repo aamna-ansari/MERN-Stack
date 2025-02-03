@@ -4,6 +4,7 @@ const express = require('express');
 const {connectToMongoDB} = require("./connect")
 // Import Routes here
 const urlRoute = require('./routes/url')
+const { generatedNewShortUrlById} = require('./controllers/url');
 
 
 // Conect mongb by function
@@ -21,6 +22,8 @@ app.use(express.json())
 
 // Routes use
 app.use('/url', urlRoute);
+
+app.get('/:shortId', generatedNewShortUrlById);
 
 
 
