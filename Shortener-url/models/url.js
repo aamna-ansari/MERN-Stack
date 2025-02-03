@@ -22,3 +22,11 @@ const urlSchema = new mongoose.Schema({
 {
   timestamps:true,
 });
+
+// Use Schema in model
+
+const URL = mongoose.model('url',urlSchema);
+
+// export model
+
+module.exports = URL;
