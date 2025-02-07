@@ -36,6 +36,9 @@ app.set("views", path.resolve("./views"));
 // Use middleware
 app.use(express.json());
 
+// Another Midddle to get/ pass form data 
+app.use(express.urlencoded({extended:false}))
+
 // For just test EJS | SSR
 // Test route
 app.get("/test", async (req, res) => {
