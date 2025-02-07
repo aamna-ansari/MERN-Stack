@@ -11,7 +11,7 @@ const URL = require("./models/url");
 // Path middleware import
 const path = require("path");
 
-// Conect mongb by function
+// Conect mongdb by function
 connectToMongoDB("mongodb://localhost:27017/short-url").then(() =>
   console.log("MongoDB Connected")
 );

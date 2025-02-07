@@ -1,5 +1,6 @@
+// Import Shortid from Npm to generate  'shortid'
 const shortid = require("shortid");
-// Store in data base so , import this
+// Store in dataBase so , import this
 const URL = require("../models/url");
 
 // generatedNewShortUrl
