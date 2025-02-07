@@ -7,7 +7,7 @@ const URL = require("../models/url");
 async function generatedNewShortUrl(req, res) {
   const body = req.body;
   if (!body.url) return res.status(400).json({ error: "URL is required" });
-  const shortID = shortid(); //Generate 8 characters short id by nanoid
+  const shortID = shortid(); //Generate 8 characters short id by nanoid and shortid
   // Add in DataBase
   await URL.create({
     shortId: shortID,
