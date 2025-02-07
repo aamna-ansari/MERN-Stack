@@ -8,6 +8,9 @@ const urlRoute = require("./routes/url");
 // Import model
 const URL = require("./models/url"); 
 
+// Import StaticRouter 
+const staticRoute = require('./routes/staticRouter')
+
 // Path middleware import
 const path = require("path");
 
@@ -48,10 +51,14 @@ app.get("/test", async (req, res) => {
 // Routes use
 app.use("/url", urlRoute);
 
+
 // app.get('/:shortId', generatedNewShortUrlById);
 
 // ✅ Use '/' for short URL redirections
-app.use("/", urlRoute);
+// app.use("/url", urlRoute);
+
+// staticRouter
+app.use("/", staticRoute);
 
 // Run server
 app.listen(PORT, () => {
