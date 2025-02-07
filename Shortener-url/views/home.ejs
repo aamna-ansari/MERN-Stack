@@ -65,6 +65,32 @@
         <% if(locals.id) { %>
           <p> <b>Generated URL:</b> http://localhost:8000/url/<%= id %> </p>
          <% } %>
+         <div>
+          <% if (locals.urls && locals.urls.length > 0) { %>
+            <table>
+              <thead>
+                <tr>
+                  <th>S.No</th>
+                  <th>ShortID</th>
+                  <th>Redirect URL</th>
+                  <th>Clicks</th>
+                </tr>
+              </thead>
+              <tbody>
+                <% locals.urls.forEach((url, index) => { %>
+                  <tr>
+                    <td><%= index + 1 %></td>
+                    <td><%= url.shortId %></td>
+                    <td><a href="<%= url.redirectUrl %>" target="_blank"><%= url.redirectUrl %></a></td>
+                    <td><%= url.visitHistory.length %></td>
+                  </tr>
+                <% }); %>
+              </tbody>
+            </table>
+          <% } else { %>
+            <p>No URLs found</p>
+          <% } %>
+         </div>
       </form>
     </main>
   </body>

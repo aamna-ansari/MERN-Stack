@@ -41,15 +41,15 @@ app.use(express.urlencoded({extended:false}))
 
 // For just test EJS | SSR
 // Test route
-app.get("/test", async (req, res) => {
-    try {
-      const allUrls = await URL.find({});
-      return res.render('home', { urls: allUrls });
-    } catch (error) {
-      console.error(error);
-      res.status(500).send("Error fetching data");
-    }
-  });
+// app.get("/test", async (req, res) => {
+//     try {
+//       const allUrls = await URL.find({});
+//       return res.render('home', { urls: allUrls });
+//     } catch (error) {
+//       console.error(error);
+//       res.status(500).send("Error fetching data");
+//     }
+//   });
 
 // Routes use
 app.use("/url", urlRoute);
