@@ -47,6 +47,9 @@
   </style>
   <body>
     <!-- Extension EJS for Inteli.. Suggestion -->
+
+    <!-- step after UI design -->
+    
     <main>
       <h1>URL Shortener</h1>
       <form action="/url" method="post">
@@ -58,6 +61,10 @@
           placeholder="http://example.com"
         />
         <Button type="submit">Generate</Button>
+        <br>
+        <% if(locals.id) { %>
+          <p> <b>Generated URL:</b> http://localhost:8000/url/<%= id %> </p>
+         <% } %>
       </form>
     </main>
   </body>
