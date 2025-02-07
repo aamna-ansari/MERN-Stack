@@ -5,12 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>EJS | Home </title>
 </head>
+<style>
+    *{
+        padding: 0;
+        margin: 0;
+    }
+    body{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        text-align: center;
+
+    }
+    main{
+        background-color: rgb(252, 195, 195);
+        height: 100vh;
+        width: 100vw;
+        display: grid;
+        place-content: center;
+    }
+    h1{
+        padding: 20px;
+        
+    }
+    label{
+        font-weight: bolder;
+    }
+    input{
+        height: 25px;
+        width: 30vw;
+        padding: 5px;
+        margin: 10px;
+    }
+    form{
+        width: 50vw;
+        background-color: antiquewhite;
+        height: 50vh;
+        border-radius: 50px;
+        padding: 20px;
+    }
+</style>
 <body>
 
     <!-- Extension EJS for Inteli.. Suggestion -->
-    <h1>Helo , I'm Here From EJS Home File</h1>
-    <% urls.forEach(url => { %>
-     <li><%= url.shortId %></li>
-    <% }) %>
+     <main>
+        <h1>URL Shortener</h1>
+        <form action="">
+            <label for="orginialInput">Enter your orginial URL:</label><br>
+            <input type="text" name="" id="orginialInput" placeholder="Enter URL">
+        </form>
+     </main>
 </body>
 </html>
