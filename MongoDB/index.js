@@ -4,7 +4,7 @@ const app = express();
 const PORT = 8000;
 
 // Connect MongoDB | connection
-//  (uri/nameof DB)
+//  (url/nameof DB)
 mongoose
   .connect("mongodb://127.0.0.1:27017/mongoDB-practice")
   .then(() => {
